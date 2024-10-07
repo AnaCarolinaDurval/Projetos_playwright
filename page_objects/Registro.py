@@ -27,7 +27,6 @@ class Registro:
 
     def finalizar_cadastro(self):    
         self.input_botao_confirmar.click()
-        self.page.wait_for_timeout(5000)
 
     def validar_sucesso_mensagem(self):
         self.modal_texto.wait_for(state='visible')
@@ -35,7 +34,6 @@ class Registro:
         pattern = re.compile(r"A conta \d+-\d+ foi criada com sucesso")
         assert pattern.search(text_sucesso), "Mensagem de sucesso incorreta"
         self.botao_fechar_modal.click()
-        self.page.wait_for_timeout(5000)
 
     def full_cadastro(self, email, nome, senha, confirmacao_senha):
         self.clicar_em_registrar()    
