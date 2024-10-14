@@ -14,6 +14,7 @@ class Registro:
         self.input_botao_confirmar = self.page.locator('.card__register button[type=submit]')
         self.botao_fechar_modal = self.page.locator('#btnCloseModal')
         self.modal_texto = self.page.locator('#modalText') 
+        self.opcao_saldo = self.page.locator("#toggleAddBalance")
 
     def clicar_em_registrar(self):
         self.botao_registrar.wait_for(state='visible')
